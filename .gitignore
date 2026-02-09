@@ -12,3 +12,6 @@ __pycache__/
 
 # Poetry local config
 poetry.toml
+
+# Ignore all datasets
+src/data/
