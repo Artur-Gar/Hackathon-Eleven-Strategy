@@ -1,0 +1,23 @@
+[project]
+name = "code"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Artur Garipov",email = "artur.gar.fin@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy (>=2.4.2,<3.0.0)",
+    "pandas (>=3.0.0,<4.0.0)",
+    "scikit-learn (>=1.8.0,<2.0.0)",
+    "jupyterlab (>=4.5.3,<5.0.0)",
+    "ipykernel (>=7.2.0,<8.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

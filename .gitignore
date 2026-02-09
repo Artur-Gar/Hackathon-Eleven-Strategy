@@ -1,0 +1,14 @@
+# Virtual environments
+.venv/
+venv/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python cache
+__pycache__/
+
+# Poetry local config
+poetry.toml
