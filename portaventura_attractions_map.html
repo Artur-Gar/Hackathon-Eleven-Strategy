@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_73543042007cc0f1b66b18ebb7f42abc {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+            background: white; padding: 12px 16px; border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3); font-family: Arial, sans-serif;
+            font-size: 12px; line-height: 1.6;">
+    <b style="font-size: 13px;">Park Areas</b><br>
+    <span style="color: #3388ff;">&#9733;</span> Mediterrània<br>
+    <span style="color: #dc3545;">&#9733;</span> China<br>
+    <span style="color: #fd7e14;">&#9733;</span> México<br>
+    <span style="color: #d2b48c;">&#9733;</span> Far West<br>
+    <span style="color: #28a745;">&#9733;</span> Polynesia<br>
+    <span style="color: #6f42c1;">&#9733;</span> SésamoAventura
+</div>
+    
+            <div class="folium-map" id="map_73543042007cc0f1b66b18ebb7f42abc" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_73543042007cc0f1b66b18ebb7f42abc = L.map(
+                "map_73543042007cc0f1b66b18ebb7f42abc",
+                {
+                    center: [41.087, 1.157],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 16,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_3ffde25f36a2a4e412393bc913147422 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_3ffde25f36a2a4e412393bc913147422.addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var marker_6619de4274ca3b6b5e729a4931cfbecf = L.marker(
+                [41.0884592, 1.1619114],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_2fa63975fd0051fd33313c33156666ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e33f310cfee44b55d9cd25175715af3c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_046937a288b47969335aa5d1cf03f2fb = $(`<div id="html_046937a288b47969335aa5d1cf03f2fb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Giga Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: China</span>     </div>     </div>`)[0];
+                popup_e33f310cfee44b55d9cd25175715af3c.setContent(html_046937a288b47969335aa5d1cf03f2fb);
+            
+        
+
+        marker_6619de4274ca3b6b5e729a4931cfbecf.bindPopup(popup_e33f310cfee44b55d9cd25175715af3c)
+        ;
+
+        
+    
+    
+            marker_6619de4274ca3b6b5e729a4931cfbecf.bindTooltip(
+                `<div>
+                     Giga Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6619de4274ca3b6b5e729a4931cfbecf.setIcon(icon_2fa63975fd0051fd33313c33156666ea);
+            
+    
+            var marker_0bd1dc7f7a62865667f6533f3637e5be = L.marker(
+                [41.0884741, 1.1608395],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_7416c6b086b7d9e762c7e53c469d80c0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9128cb1321a90e573fba7aa3a590e336 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2365acd6ccff5bb633a487a93ca6013e = $(`<div id="html_2365acd6ccff5bb633a487a93ca6013e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Roller Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: China</span>     </div>     </div>`)[0];
+                popup_9128cb1321a90e573fba7aa3a590e336.setContent(html_2365acd6ccff5bb633a487a93ca6013e);
+            
+        
+
+        marker_0bd1dc7f7a62865667f6533f3637e5be.bindPopup(popup_9128cb1321a90e573fba7aa3a590e336)
+        ;
+
+        
+    
+    
+            marker_0bd1dc7f7a62865667f6533f3637e5be.bindTooltip(
+                `<div>
+                     Roller Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0bd1dc7f7a62865667f6533f3637e5be.setIcon(icon_7416c6b086b7d9e762c7e53c469d80c0);
+            
+    
+            var marker_38aae7531e7dd679812a28aacecc27cd = L.marker(
+                [41.0843941, 1.156379],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_162e0e95cdb63fa89c514d6e1fd040be = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_80fbfb9559878876aef829997e5c08dc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_09f7e623848447f90fd64bece87ac718 = $(`<div id="html_09f7e623848447f90fd64bece87ac718" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Flying Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: Mediterrània</span>     </div>     </div>`)[0];
+                popup_80fbfb9559878876aef829997e5c08dc.setContent(html_09f7e623848447f90fd64bece87ac718);
+            
+        
+
+        marker_38aae7531e7dd679812a28aacecc27cd.bindPopup(popup_80fbfb9559878876aef829997e5c08dc)
+        ;
+
+        
+    
+    
+            marker_38aae7531e7dd679812a28aacecc27cd.bindTooltip(
+                `<div>
+                     Flying Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38aae7531e7dd679812a28aacecc27cd.setIcon(icon_162e0e95cdb63fa89c514d6e1fd040be);
+            
+    
+            var marker_22e25f1695d57b40f8125456fb48bee2 = L.marker(
+                [41.0866994, 1.1593646],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_4c908bc9e0cdf71fe3bf44fe7965b7a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36e9cde520e3aeb7d2373e97c13ee53f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a1ea54227852e5d825a5449f00a024f = $(`<div id="html_0a1ea54227852e5d825a5449f00a024f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Kiddie Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: SésamoAventura</span>     </div>     </div>`)[0];
+                popup_36e9cde520e3aeb7d2373e97c13ee53f.setContent(html_0a1ea54227852e5d825a5449f00a024f);
+            
+        
+
+        marker_22e25f1695d57b40f8125456fb48bee2.bindPopup(popup_36e9cde520e3aeb7d2373e97c13ee53f)
+        ;
+
+        
+    
+    
+            marker_22e25f1695d57b40f8125456fb48bee2.bindTooltip(
+                `<div>
+                     Kiddie Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_22e25f1695d57b40f8125456fb48bee2.setIcon(icon_4c908bc9e0cdf71fe3bf44fe7965b7a2);
+            
+    
+            var marker_10185cdd752adf9400c7410312e012fd = L.marker(
+                [41.0899185, 1.1590092],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_051bbdab0a0690147dd474c17a6f3016 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c2e5fd9a1654edaa1f6ed49c706ccf51 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_385d6cdda5a06e33cb3dc0a01d5c8e9f = $(`<div id="html_385d6cdda5a06e33cb3dc0a01d5c8e9f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Drop Tower</b><br>         <span style="color: #444; font-size: 12px;">Area: México</span>     </div>     </div>`)[0];
+                popup_c2e5fd9a1654edaa1f6ed49c706ccf51.setContent(html_385d6cdda5a06e33cb3dc0a01d5c8e9f);
+            
+        
+
+        marker_10185cdd752adf9400c7410312e012fd.bindPopup(popup_c2e5fd9a1654edaa1f6ed49c706ccf51)
+        ;
+
+        
+    
+    
+            marker_10185cdd752adf9400c7410312e012fd.bindTooltip(
+                `<div>
+                     Drop Tower
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10185cdd752adf9400c7410312e012fd.setIcon(icon_051bbdab0a0690147dd474c17a6f3016);
+            
+    
+            var marker_95941eef608fc3968ca7fb4a31d5a362 = L.marker(
+                [41.0868132, 1.1565065],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_d547f70f8b2f3dabc8195741db5d7c43 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6bdf783514d89692909effd6c047fac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e4b638b880ef0aaea3408ffe9aca22a = $(`<div id="html_1e4b638b880ef0aaea3408ffe9aca22a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Rapids Ride</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_b6bdf783514d89692909effd6c047fac.setContent(html_1e4b638b880ef0aaea3408ffe9aca22a);
+            
+        
+
+        marker_95941eef608fc3968ca7fb4a31d5a362.bindPopup(popup_b6bdf783514d89692909effd6c047fac)
+        ;
+
+        
+    
+    
+            marker_95941eef608fc3968ca7fb4a31d5a362.bindTooltip(
+                `<div>
+                     Rapids Ride
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95941eef608fc3968ca7fb4a31d5a362.setIcon(icon_d547f70f8b2f3dabc8195741db5d7c43);
+            
+    
+            var marker_3ebaf7e0c4540e0332eb236aa295aa2c = L.marker(
+                [41.0846798, 1.1580606],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_165a001a1b75791b87510bd91560186e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2dd485b8442bf21893aa372dba87c723 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7f85baec4e4f5e57a429c9ce4b7eaa2 = $(`<div id="html_e7f85baec4e4f5e57a429c9ce4b7eaa2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Water Ride</b><br>         <span style="color: #444; font-size: 12px;">Area: Polynesia</span>     </div>     </div>`)[0];
+                popup_2dd485b8442bf21893aa372dba87c723.setContent(html_e7f85baec4e4f5e57a429c9ce4b7eaa2);
+            
+        
+
+        marker_3ebaf7e0c4540e0332eb236aa295aa2c.bindPopup(popup_2dd485b8442bf21893aa372dba87c723)
+        ;
+
+        
+    
+    
+            marker_3ebaf7e0c4540e0332eb236aa295aa2c.bindTooltip(
+                `<div>
+                     Water Ride
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3ebaf7e0c4540e0332eb236aa295aa2c.setIcon(icon_165a001a1b75791b87510bd91560186e);
+            
+    
+            var marker_87a684a40a1ff89e9376c8cc30472ebe = L.marker(
+                [41.087095, 1.1570012],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_105b026a4ff22066baa390779626bd91 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78b835ab9c8a722326494c8a37b02015 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5795ef73ab138d8cfb7323774f65ab72 = $(`<div id="html_5795ef73ab138d8cfb7323774f65ab72" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Bumper Cars</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_78b835ab9c8a722326494c8a37b02015.setContent(html_5795ef73ab138d8cfb7323774f65ab72);
+            
+        
+
+        marker_87a684a40a1ff89e9376c8cc30472ebe.bindPopup(popup_78b835ab9c8a722326494c8a37b02015)
+        ;
+
+        
+    
+    
+            marker_87a684a40a1ff89e9376c8cc30472ebe.bindTooltip(
+                `<div>
+                     Bumper Cars
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_87a684a40a1ff89e9376c8cc30472ebe.setIcon(icon_105b026a4ff22066baa390779626bd91);
+            
+    
+            var marker_4ce9520801939620653b203f17f5cd21 = L.marker(
+                [41.0896774, 1.155892],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_0bfa8ca082f5e78b99eae8806daba85c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_be62c08ba72d961d9babfd05c48ef441 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d9f2121a62d0c4c16478a2ae848a9f9a = $(`<div id="html_d9f2121a62d0c4c16478a2ae848a9f9a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Merry Go Round</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_be62c08ba72d961d9babfd05c48ef441.setContent(html_d9f2121a62d0c4c16478a2ae848a9f9a);
+            
+        
+
+        marker_4ce9520801939620653b203f17f5cd21.bindPopup(popup_be62c08ba72d961d9babfd05c48ef441)
+        ;
+
+        
+    
+    
+            marker_4ce9520801939620653b203f17f5cd21.bindTooltip(
+                `<div>
+                     Merry Go Round
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4ce9520801939620653b203f17f5cd21.setIcon(icon_0bfa8ca082f5e78b99eae8806daba85c);
+            
+    
+            var marker_8d84d0e0d71bf9debaef5cd1a346736b = L.marker(
+                [41.0890787, 1.1581803],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_3c960d81de5f65d04cce00f890926689 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22f858d5ba0fa5f7edc24e235b506a87 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50b000a0fc794761ad8ead0e92f6a779 = $(`<div id="html_50b000a0fc794761ad8ead0e92f6a779" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Spinning Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: México</span>     </div>     </div>`)[0];
+                popup_22f858d5ba0fa5f7edc24e235b506a87.setContent(html_50b000a0fc794761ad8ead0e92f6a779);
+            
+        
+
+        marker_8d84d0e0d71bf9debaef5cd1a346736b.bindPopup(popup_22f858d5ba0fa5f7edc24e235b506a87)
+        ;
+
+        
+    
+    
+            marker_8d84d0e0d71bf9debaef5cd1a346736b.bindTooltip(
+                `<div>
+                     Spinning Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d84d0e0d71bf9debaef5cd1a346736b.setIcon(icon_3c960d81de5f65d04cce00f890926689);
+            
+    
+            var marker_e46849309da9d6b9a5758ee659d87740 = L.marker(
+                [41.089695, 1.1555904],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_20d2e80f1304fdd3fab69b324bc87627 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85f7121057b02f215201bca98378f3c1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc154da396572bc5cc8e0627b1e2ca74 = $(`<div id="html_dc154da396572bc5cc8e0627b1e2ca74" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Inverted Coaster</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_85f7121057b02f215201bca98378f3c1.setContent(html_dc154da396572bc5cc8e0627b1e2ca74);
+            
+        
+
+        marker_e46849309da9d6b9a5758ee659d87740.bindPopup(popup_85f7121057b02f215201bca98378f3c1)
+        ;
+
+        
+    
+    
+            marker_e46849309da9d6b9a5758ee659d87740.bindTooltip(
+                `<div>
+                     Inverted Coaster
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e46849309da9d6b9a5758ee659d87740.setIcon(icon_20d2e80f1304fdd3fab69b324bc87627);
+            
+    
+            var marker_49b311195ad9c3c66d7aef4d86f83651 = L.marker(
+                [41.0862885, 1.1592522],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_2b5b6d5f51968703afcb574eb969bb18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4a48860cc47d7aa1bcf5180fb1c7bab4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b3ce6e2e9ad6d1f6645374300964e36 = $(`<div id="html_6b3ce6e2e9ad6d1f6645374300964e36" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Circus Train</b><br>         <span style="color: #444; font-size: 12px;">Area: SésamoAventura</span>     </div>     </div>`)[0];
+                popup_4a48860cc47d7aa1bcf5180fb1c7bab4.setContent(html_6b3ce6e2e9ad6d1f6645374300964e36);
+            
+        
+
+        marker_49b311195ad9c3c66d7aef4d86f83651.bindPopup(popup_4a48860cc47d7aa1bcf5180fb1c7bab4)
+        ;
+
+        
+    
+    
+            marker_49b311195ad9c3c66d7aef4d86f83651.bindTooltip(
+                `<div>
+                     Circus Train
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_49b311195ad9c3c66d7aef4d86f83651.setIcon(icon_2b5b6d5f51968703afcb574eb969bb18);
+            
+    
+            var marker_bec4bfba280c7d919ab66f01540f8ec6 = L.marker(
+                [41.086363, 1.1605387],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_2edc57767040c664d32092ec0b5c08d5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0c800ae825c550d3e36479b93b9d2dd9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26ef90d4dfd3fc4dee290587267d5a82 = $(`<div id="html_26ef90d4dfd3fc4dee290587267d5a82" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Haunted House</b><br>         <span style="color: #444; font-size: 12px;">Area: SésamoAventura</span>     </div>     </div>`)[0];
+                popup_0c800ae825c550d3e36479b93b9d2dd9.setContent(html_26ef90d4dfd3fc4dee290587267d5a82);
+            
+        
+
+        marker_bec4bfba280c7d919ab66f01540f8ec6.bindPopup(popup_0c800ae825c550d3e36479b93b9d2dd9)
+        ;
+
+        
+    
+    
+            marker_bec4bfba280c7d919ab66f01540f8ec6.bindTooltip(
+                `<div>
+                     Haunted House
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bec4bfba280c7d919ab66f01540f8ec6.setIcon(icon_2edc57767040c664d32092ec0b5c08d5);
+            
+    
+            var marker_c7fbe2815976aee7165f2f389ecb825f = L.marker(
+                [41.0881663, 1.1584035],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_0a05d3a24b1582be4621725e9516937d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1aaa5b3c9b3dd121c30dc5e973be0ba2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4be86fc2693f2aa8837b4a1508e1175a = $(`<div id="html_4be86fc2693f2aa8837b4a1508e1175a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Go-Karts</b><br>         <span style="color: #444; font-size: 12px;">Area: China</span>     </div>     </div>`)[0];
+                popup_1aaa5b3c9b3dd121c30dc5e973be0ba2.setContent(html_4be86fc2693f2aa8837b4a1508e1175a);
+            
+        
+
+        marker_c7fbe2815976aee7165f2f389ecb825f.bindPopup(popup_1aaa5b3c9b3dd121c30dc5e973be0ba2)
+        ;
+
+        
+    
+    
+            marker_c7fbe2815976aee7165f2f389ecb825f.bindTooltip(
+                `<div>
+                     Go-Karts
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7fbe2815976aee7165f2f389ecb825f.setIcon(icon_0a05d3a24b1582be4621725e9516937d);
+            
+    
+            var marker_0c8afe8c701cba12b3be25a8f198170e = L.marker(
+                [41.0895807, 1.157408],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_07765436c0f50c887d38eb4541279bcd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2d8ff4fa77f0e7673da16975dfc7b1a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0411b6fc44d5cb640f676e416ae59a5e = $(`<div id="html_0411b6fc44d5cb640f676e416ae59a5e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Swing Ride</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_2d8ff4fa77f0e7673da16975dfc7b1a2.setContent(html_0411b6fc44d5cb640f676e416ae59a5e);
+            
+        
+
+        marker_0c8afe8c701cba12b3be25a8f198170e.bindPopup(popup_2d8ff4fa77f0e7673da16975dfc7b1a2)
+        ;
+
+        
+    
+    
+            marker_0c8afe8c701cba12b3be25a8f198170e.bindTooltip(
+                `<div>
+                     Swing Ride
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0c8afe8c701cba12b3be25a8f198170e.setIcon(icon_07765436c0f50c887d38eb4541279bcd);
+            
+    
+            var marker_6cee93ccc4c10033660f98bf2d654405 = L.marker(
+                [41.0907598, 1.1560799],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_3b786c81ad04207784835c6c0e82d17c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_867a4233daa0adde9b5b1004e1c808f6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_84f4a93a1766d3e7192561bded64e881 = $(`<div id="html_84f4a93a1766d3e7192561bded64e881" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Vertical Drop</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_867a4233daa0adde9b5b1004e1c808f6.setContent(html_84f4a93a1766d3e7192561bded64e881);
+            
+        
+
+        marker_6cee93ccc4c10033660f98bf2d654405.bindPopup(popup_867a4233daa0adde9b5b1004e1c808f6)
+        ;
+
+        
+    
+    
+            marker_6cee93ccc4c10033660f98bf2d654405.bindTooltip(
+                `<div>
+                     Vertical Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6cee93ccc4c10033660f98bf2d654405.setIcon(icon_3b786c81ad04207784835c6c0e82d17c);
+            
+    
+            var marker_32942e1d9f6a1c4b2da8c2ca186d18ff = L.marker(
+                [41.0900656, 1.158703],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_7781bd2d113513b07777cc04bba558b8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c4fcd6521f6205b341a391a2e7acac26 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9d1765cc465e5377951077be5fa5c14a = $(`<div id="html_9d1765cc465e5377951077be5fa5c14a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Crazy Dance</b><br>         <span style="color: #444; font-size: 12px;">Area: México</span>     </div>     </div>`)[0];
+                popup_c4fcd6521f6205b341a391a2e7acac26.setContent(html_9d1765cc465e5377951077be5fa5c14a);
+            
+        
+
+        marker_32942e1d9f6a1c4b2da8c2ca186d18ff.bindPopup(popup_c4fcd6521f6205b341a391a2e7acac26)
+        ;
+
+        
+    
+    
+            marker_32942e1d9f6a1c4b2da8c2ca186d18ff.bindTooltip(
+                `<div>
+                     Crazy Dance
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_32942e1d9f6a1c4b2da8c2ca186d18ff.setIcon(icon_7781bd2d113513b07777cc04bba558b8);
+            
+    
+            var marker_46f26ad6b6482fef0b813d5d07efb1e1 = L.marker(
+                [41.0904439, 1.1597998],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_37e15536ab41c4b6df55dda2902212a4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0f63d11bddc49d1e92bf725302371713 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a5bfec7481e9330c1a86def1f5424c15 = $(`<div id="html_a5bfec7481e9330c1a86def1f5424c15" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Oz Theatre</b><br>         <span style="color: #444; font-size: 12px;">Area: México</span>     </div>     </div>`)[0];
+                popup_0f63d11bddc49d1e92bf725302371713.setContent(html_a5bfec7481e9330c1a86def1f5424c15);
+            
+        
+
+        marker_46f26ad6b6482fef0b813d5d07efb1e1.bindPopup(popup_0f63d11bddc49d1e92bf725302371713)
+        ;
+
+        
+    
+    
+            marker_46f26ad6b6482fef0b813d5d07efb1e1.bindTooltip(
+                `<div>
+                     Oz Theatre
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_46f26ad6b6482fef0b813d5d07efb1e1.setIcon(icon_37e15536ab41c4b6df55dda2902212a4);
+            
+    
+            var marker_54937b3982630fd965b3b942ee429359 = L.marker(
+                [41.0899839, 1.1570706],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_c8dd88efd665d69fd3475c062cd76bfc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ff16013c457b26d36da823ad08e4ff2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b65a4a7c2e0d59c769658e28c27233f9 = $(`<div id="html_b65a4a7c2e0d59c769658e28c27233f9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Superman Ride</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_1ff16013c457b26d36da823ad08e4ff2.setContent(html_b65a4a7c2e0d59c769658e28c27233f9);
+            
+        
+
+        marker_54937b3982630fd965b3b942ee429359.bindPopup(popup_1ff16013c457b26d36da823ad08e4ff2)
+        ;
+
+        
+    
+    
+            marker_54937b3982630fd965b3b942ee429359.bindTooltip(
+                `<div>
+                     Superman Ride
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_54937b3982630fd965b3b942ee429359.setIcon(icon_c8dd88efd665d69fd3475c062cd76bfc);
+            
+    
+            var marker_97090e68d21c05377a11e2cb9bc0e974 = L.marker(
+                [41.087343, 1.1573234],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_cf56ee58e78b72a9dafcd7178c694b85 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_60dc1664ee0986924c26d0332d101e66 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_198878de9380fbc21a2550c0eff51ce3 = $(`<div id="html_198878de9380fbc21a2550c0eff51ce3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Himalaya Ride</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_60dc1664ee0986924c26d0332d101e66.setContent(html_198878de9380fbc21a2550c0eff51ce3);
+            
+        
+
+        marker_97090e68d21c05377a11e2cb9bc0e974.bindPopup(popup_60dc1664ee0986924c26d0332d101e66)
+        ;
+
+        
+    
+    
+            marker_97090e68d21c05377a11e2cb9bc0e974.bindTooltip(
+                `<div>
+                     Himalaya Ride
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97090e68d21c05377a11e2cb9bc0e974.setIcon(icon_cf56ee58e78b72a9dafcd7178c694b85);
+            
+    
+            var marker_95bf4c2a9ed0f6c2ac8db43e26a265ea = L.marker(
+                [41.0868121, 1.162234],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_06f814218f45b2ad0a707e259ac89f25 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_224a28601677edeca655cb39a11dd2cc = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_841d7a62df16041916a16c8b7f32acb7 = $(`<div id="html_841d7a62df16041916a16c8b7f32acb7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Giant Wheel</b><br>         <span style="color: #444; font-size: 12px;">Area: China</span>     </div>     </div>`)[0];
+                popup_224a28601677edeca655cb39a11dd2cc.setContent(html_841d7a62df16041916a16c8b7f32acb7);
+            
+        
+
+        marker_95bf4c2a9ed0f6c2ac8db43e26a265ea.bindPopup(popup_224a28601677edeca655cb39a11dd2cc)
+        ;
+
+        
+    
+    
+            marker_95bf4c2a9ed0f6c2ac8db43e26a265ea.bindTooltip(
+                `<div>
+                     Giant Wheel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_95bf4c2a9ed0f6c2ac8db43e26a265ea.setIcon(icon_06f814218f45b2ad0a707e259ac89f25);
+            
+    
+            var marker_a83ce02433ddff06d6380721eecd9997 = L.marker(
+                [41.0879321, 1.1562076],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_b942cc0a4feba9e9080a69cca0f1acd7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a5b391d2e77b8f8b08b6291933e4da7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f0d71fa106292560ed60dc1c9ca2560b = $(`<div id="html_f0d71fa106292560ed60dc1c9ca2560b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Spiral Slide</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_1a5b391d2e77b8f8b08b6291933e4da7.setContent(html_f0d71fa106292560ed60dc1c9ca2560b);
+            
+        
+
+        marker_a83ce02433ddff06d6380721eecd9997.bindPopup(popup_1a5b391d2e77b8f8b08b6291933e4da7)
+        ;
+
+        
+    
+    
+            marker_a83ce02433ddff06d6380721eecd9997.bindTooltip(
+                `<div>
+                     Spiral Slide
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a83ce02433ddff06d6380721eecd9997.setIcon(icon_b942cc0a4feba9e9080a69cca0f1acd7);
+            
+    
+            var marker_faca08194ad66de59510fba63fb60cc7 = L.marker(
+                [41.0865605, 1.1592712],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_97c4bcee3c2c60312fb0a7a0c59ad55c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61bb1adc99e2248ec08c4ffceb48c21a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_61eaced805420716537a748c158a0135 = $(`<div id="html_61eaced805420716537a748c158a0135" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Free Fall</b><br>         <span style="color: #444; font-size: 12px;">Area: SésamoAventura</span>     </div>     </div>`)[0];
+                popup_61bb1adc99e2248ec08c4ffceb48c21a.setContent(html_61eaced805420716537a748c158a0135);
+            
+        
+
+        marker_faca08194ad66de59510fba63fb60cc7.bindPopup(popup_61bb1adc99e2248ec08c4ffceb48c21a)
+        ;
+
+        
+    
+    
+            marker_faca08194ad66de59510fba63fb60cc7.bindTooltip(
+                `<div>
+                     Free Fall
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_faca08194ad66de59510fba63fb60cc7.setIcon(icon_97c4bcee3c2c60312fb0a7a0c59ad55c);
+            
+    
+            var marker_bce2828a74681207292c4d12dc9d72f4 = L.marker(
+                [41.0875486, 1.1569792],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_232bf3fe5eb280d1eb90754bd6fe58cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_772f0f8bb8c4a8e0d591ebf6b5db5585 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8a0c2297c9d5fe6994f4a4b2427cbfbe = $(`<div id="html_8a0c2297c9d5fe6994f4a4b2427cbfbe" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Dizzy Dropper</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_772f0f8bb8c4a8e0d591ebf6b5db5585.setContent(html_8a0c2297c9d5fe6994f4a4b2427cbfbe);
+            
+        
+
+        marker_bce2828a74681207292c4d12dc9d72f4.bindPopup(popup_772f0f8bb8c4a8e0d591ebf6b5db5585)
+        ;
+
+        
+    
+    
+            marker_bce2828a74681207292c4d12dc9d72f4.bindTooltip(
+                `<div>
+                     Dizzy Dropper
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bce2828a74681207292c4d12dc9d72f4.setIcon(icon_232bf3fe5eb280d1eb90754bd6fe58cf);
+            
+    
+            var marker_c5f104a0240f926aad4ad5ae6030b049 = L.marker(
+                [41.0902704, 1.1567159],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_7114286bb4737a46276d531f73ba9521 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "beige",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a605eaaf0fa3336c4d874eb466fab140 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8496bee106cea4d6d9c43006fb3dc0b8 = $(`<div id="html_8496bee106cea4d6d9c43006fb3dc0b8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Bungee Jump</b><br>         <span style="color: #444; font-size: 12px;">Area: Far West</span>     </div>     </div>`)[0];
+                popup_a605eaaf0fa3336c4d874eb466fab140.setContent(html_8496bee106cea4d6d9c43006fb3dc0b8);
+            
+        
+
+        marker_c5f104a0240f926aad4ad5ae6030b049.bindPopup(popup_a605eaaf0fa3336c4d874eb466fab140)
+        ;
+
+        
+    
+    
+            marker_c5f104a0240f926aad4ad5ae6030b049.bindTooltip(
+                `<div>
+                     Bungee Jump
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c5f104a0240f926aad4ad5ae6030b049.setIcon(icon_7114286bb4737a46276d531f73ba9521);
+            
+    
+            var marker_00b061fa18b946995d631a4210d3f2ef = L.marker(
+                [41.0869735, 1.1600437],
+                {
+}
+            ).addTo(map_73543042007cc0f1b66b18ebb7f42abc);
+        
+    
+            var icon_4266e11cacd65a476ad4cfa734863e00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "star",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d2f137b0ef41adfb80b0a5ef512c0dde = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_45e530096b4cf7a48e1a9ab54d231b5e = $(`<div id="html_45e530096b4cf7a48e1a9ab54d231b5e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; min-width: 180px;">         <b style="font-size: 14px;">Zipline</b><br>         <span style="color: #444; font-size: 12px;">Area: SésamoAventura</span>     </div>     </div>`)[0];
+                popup_d2f137b0ef41adfb80b0a5ef512c0dde.setContent(html_45e530096b4cf7a48e1a9ab54d231b5e);
+            
+        
+
+        marker_00b061fa18b946995d631a4210d3f2ef.bindPopup(popup_d2f137b0ef41adfb80b0a5ef512c0dde)
+        ;
+
+        
+    
+    
+            marker_00b061fa18b946995d631a4210d3f2ef.bindTooltip(
+                `<div>
+                     Zipline
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00b061fa18b946995d631a4210d3f2ef.setIcon(icon_4266e11cacd65a476ad4cfa734863e00);
+            
+</script>
+</html>
