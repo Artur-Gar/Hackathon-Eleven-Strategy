@@ -9,7 +9,7 @@ import pandas as pd
 from .create_dfs import create_inference_df, create_train_df
 
 
-DEFAULT_DUMMY_COLS: tuple[str, ...] = ("dow", "month")
+DEFAULT_DUMMY_COLS: tuple[str, ...] = ("hour", "dow", "month", "covid")
 
 def _fill_numeric_median(df: pd.DataFrame, exclude: Optional[Iterable[str]] = None) -> pd.DataFrame:
     out = df.copy()
@@ -44,7 +44,7 @@ def _one_hot_encode(
             if c not in out.columns:
                 out[c] = 0
 
-        protected = [c for c in ["date_hour", "hour", "ENTITY_DESCRIPTION_SHORT", "wait_time_avg"] if c in out.columns]
+        protected = [c for c in ["date_hour", "ENTITY_DESCRIPTION_SHORT", "wait_time_avg"] if c in out.columns]
         passthrough = [c for c in out.columns if c not in expected_set and c not in protected]
         out = out[protected + passthrough + expected_set]
 
@@ -178,7 +178,7 @@ def prepare_inference_for_sarimax(
         for c in cols:
             if c not in prepared.columns:
                 prepared[c] = 0
-        extra = [c for c in prepared.columns if c not in cols and c not in ["date_hour", "hour", "ENTITY_DESCRIPTION_SHORT", "wait_time_avg"]]
+        extra = [c for c in prepared.columns if c not in cols and c not in ["date_hour", "ENTITY_DESCRIPTION_SHORT", "wait_time_avg"]]
         if extra:
             prepared = prepared.drop(columns=extra)
 
