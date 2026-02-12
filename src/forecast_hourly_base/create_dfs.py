@@ -21,11 +21,13 @@ TRAIN_OUTPUT_COLS = [
     "date_hour",
     "ENTITY_DESCRIPTION_SHORT",
     "wait_time_avg",
+    "hour",
     "dow",
     "month",
     "attendance",
     *WEATHER_COLS,
     *ATTRACTION_FEATURE_COLS,
+    "covid"
 ]
 
 
@@ -96,6 +98,29 @@ def _prepare_hourly_weather(weather_df: pd.DataFrame) -> pd.DataFrame:
     
     return weather[["date_hour", *WEATHER_COLS]].sort_values("date_hour").reset_index(drop=True)
 
+
+def _add_covid_period(
+    df: pd.DataFrame,
+    date_col: str = "date_hour",
+    out_col: str = "covid",
+    start: str | pd.Timestamp = "2020-03-11",
+    end: str | pd.Timestamp = "2022-04-20",
+) -> pd.DataFrame:
+    """
+    Add a binary COVID dummy column to a DataFrame.
+
+    Rules (inclusive):
+      - start <= date <= end  -> 1
+      - otherwise            -> 0
+    """
+    out = df.copy()
+    out[date_col] = pd.to_datetime(out[date_col])
+
+    start_ts = pd.Timestamp(start)
+    end_ts = pd.Timestamp(end)
+
+    out[out_col] = ((out[date_col] >= start_ts) & (out[date_col] <= end_ts)).astype("int8")
+    return out
 
 def create_train_df(
     data_dir: Union[str, Path] = "src/data",
@@ -168,7 +193,8 @@ def create_train_df(
     if clip_availability:
         hourly["availability"] = hourly["availability"].clip(0.0, 1.5)
 
-    hourly["date"] = hourly["date_hour"].dt.floor("D")
+    hourly["date_day"] = hourly["date_hour"].dt.floor("D")
+    hourly["hour"] = pd.to_datetime(hourly["date_hour"]).dt.hour.astype(str)
     hourly["dow"] = hourly["date_hour"].dt.dayofweek.astype("int16")
     hourly["month"] = hourly["date_hour"].dt.month.astype("int16")
 
@@ -182,7 +208,6 @@ def create_train_df(
 
     attendance["attendance"] = pd.to_numeric(attendance[attendance_col], errors="coerce")
 
-    hourly["date_day"] = hourly["date_hour"].dt.floor("D")
     train_df = hourly.merge(attendance, on="date_day", how="left").drop(columns=["date_day"])
 
     weather_hourly = _prepare_hourly_weather(weather)
@@ -191,7 +216,10 @@ def create_train_df(
     train_df = train_df.dropna(subset=["date_hour", "ENTITY_DESCRIPTION_SHORT", "wait_time_avg", "availability", "utilization", 'attendance'])
     train_df["ENTITY_DESCRIPTION_SHORT"] = train_df["ENTITY_DESCRIPTION_SHORT"].astype("category")
 
+    train_df = _add_covid_period(train_df)
+    
     train_df = train_df[TRAIN_OUTPUT_COLS].sort_values(["ENTITY_DESCRIPTION_SHORT", "date_hour"]).reset_index(drop=True)
+
     return train_df
 
 
@@ -224,6 +252,7 @@ def create_inference_df(
     inference_df = _prepare_hourly_weather(weather_forecast_df).copy()
     inference_df["ENTITY_DESCRIPTION_SHORT"] = attraction_name
     inference_df["dow"] = inference_df["date_hour"].dt.dayofweek.astype("int16")
+    inference_df["hour"] = pd.to_datetime(inference_df["date_hour"]).dt.hour.astype(str)
 
     if month is None:
         inference_df["month"] = inference_df["date_hour"].dt.month.astype("int16")
@@ -262,4 +291,11 @@ def create_inference_df(
     inference_df = _fill_with_median_or_zero(inference_df, [*WEATHER_COLS, "attendance"])
     inference_df["wait_time_avg"] = np.nan
 
-    return inference_df[TRAIN_OUTPUT_COLS].sort_values("date_hour").reset_index(drop=True)
+    inference_df = _add_covid_period(inference_df)
+
+    hours = previous_week_real_df["date_hour"].dt.hour.unique()   # e.g., [6, 7, 8, ...]
+    inference_df = inference_df[inference_df["date_hour"].dt.hour.isin(hours)].copy()
+
+    inference_df = inference_df[TRAIN_OUTPUT_COLS].sort_values("date_hour").reset_index(drop=True)
+
+    return inference_df
