@@ -1,6 +1,36 @@
 ﻿# Park Wait Forecasting Repository
 
-This repository contains the end-to-end workflow for forecasting amusement park attendance and attraction waiting times, plus three frontend apps for visualization.
+## Business Context
+
+Amusement parks face two operational challenges every day:
+- Highly variable attraction queue times by hour.
+- Large swings in daily attendance driven by seasonality, weather, and calendar effects.
+
+Without reliable forecasts, operations teams react too late, staffing is less efficient, guest experience degrades, and revenue opportunities are missed.
+
+## Business Goal
+
+Build a forecasting system that predicts:
+- Next 7 days of park attendance (daily).
+- Next 7 days of attraction waiting times (hourly) per ride.
+
+These forecasts are used to support operational planning and power dashboard/UI modules for decision-making.
+
+## Business Value
+
+- Better staffing and resource planning for peak/off-peak periods.
+- Lower queue pressure by anticipating high-load attractions.
+- Better guest satisfaction through more reliable wait-time information.
+- Faster planning cycles with automated forecast generation.
+
+## Solution Overview
+
+The repository includes:
+- Data preparation pipeline from historical attendance, waiting times, and weather.
+- Attendance forecasting model (XGBoost-based).
+- Attraction-level waiting-time forecasting models (Gradient Boosting).
+- Inference pipeline that combines weather + attendance + attraction models.
+- Frontend apps for visualization and communication of forecast outputs.
 
 ## Repository Structure
 
@@ -31,7 +61,7 @@ python -m pip install --upgrade pip
 python -m pip install numpy pandas joblib scikit-learn xgboost statsmodels lightgbm pyarrow pmdarima tqdm fastapi uvicorn jupyterlab ipykernel ipywidgets
 ```
 
-## Main Forecasting Workflow
+## Forecasting Workflow
 
 ### 1) Generate weather forecast input
 
@@ -66,8 +96,8 @@ python -m modeling.wait_time_forecasting.waiting_time_cli --mode forecast --attr
 ```
 
 This produces:
-- Per-attraction files in `modeling/data/forecasts/` named like `Attraction_Name_waiting_dd_mm_yyyy.csv`
-- Combined UI feed at `modeling/data/processed/wait-times.csv`
+- Per-attraction files in `modeling/data/forecasts/` named like `Attraction_Name_waiting_dd_mm_yyyy.csv`.
+- Combined UI feed at `modeling/data/processed/wait-times.csv`.
 
 ## Optional: Train and Forecast in One Command
 
