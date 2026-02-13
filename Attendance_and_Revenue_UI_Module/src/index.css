@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PortAventura World Dashboard Design System
+   All colors in HSL for Tailwind compatibility.
+   Primary: #ec6d13 → 24 85% 50%
+   Secondary: #24598f → 210 60% 35%
+   Accent: #f4c025 → 43 91% 55%
+   Background: #faf8f5 → 36 38% 97%
+   Text: #1b2232 → 220 30% 15%
+   Muted: #efebe7 → 30 24% 92%
+   Border: #e7e1da → 32 22% 88%
+*/
+
+@layer base {
+  :root {
+    --background: 36 38% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 24 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 24% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    --accent: 43 91% 55%;
+    --accent-foreground: 220 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 32 22% 88%;
+    --input: 32 22% 88%;
+    --ring: 24 85% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 30% 10%;
+    --foreground: 36 38% 97%;
+
+    --card: 220 30% 12%;
+    --card-foreground: 36 38% 97%;
+
+    --popover: 220 30% 12%;
+    --popover-foreground: 36 38% 97%;
+
+    --primary: 24 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 60% 35%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 20% 18%;
+    --muted-foreground: 220 15% 65%;
+
+    --accent: 43 91% 55%;
+    --accent-foreground: 220 30% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 24 85% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
