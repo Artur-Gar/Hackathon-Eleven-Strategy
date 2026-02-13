@@ -1,25 +1,38 @@
-# Virtual environments
+# Python environments
 .venv/
 venv/
+env/
+ENV/
 
-# Environment files
+# Environment/config files
 .env
 .env.*
 !.env.example
+.python-version
+poetry.toml
 
-# Python cache and tooling
+# Python bytecode and caches
 __pycache__/
-.ipynb_checkpoints/
+*.py[cod]
+*$py.class
+
+# Python tooling caches
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.tox/
+.nox/
+.hypothesis/
 
-# Poetry local config
-poetry.toml
+# Test and coverage outputs
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
 
-# Generated data and model artifacts
-modeling/data/
-src/models/*.joblib
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
 
 # Logs
 logs/
@@ -30,19 +43,29 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Frontend build/deps
+# Frontend dependencies/build outputs (all UI modules)
 node_modules/
 dist/
 dist-ssr/
-coverage/
+.vite/
 *.tsbuildinfo
 *.local
 
-# Editor directories and files
+# Modeling generated data and artifacts
+modeling/data/raw/
+modeling/artifacts/
+modeling/models/
+*.joblib
+
+# Local UI tooling
+.lovable/
+
+# Editor / OS files
 .vscode/*
 !.vscode/extensions.json
 .idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
