@@ -27,10 +27,21 @@ These forecasts are used to support operational planning and power dashboard/UI 
 
 The repository includes:
 - Data preparation pipeline from historical attendance, waiting times, and weather.
-- Attendance forecasting model (XGBoost-based).
-- Attraction-level waiting-time forecasting models (Gradient Boosting).
+- Attendance forecasting model (LightGBM-based).
+- Attraction-level waiting-time forecasting models (XGBoost-based).
 - Inference pipeline that combines weather + attendance + attraction models.
 - Frontend apps for visualization and communication of forecast outputs.
+
+## Key Dependencies
+
+- NumPy & pandas: Core tabular processing and feature engineering for forecasting workflows.
+- scikit-learn, XGBoost, and LightGBM: Main machine learning stack for attendance and wait-time modeling.
+- statsmodels & pmdarima: Time-series analysis and ARIMA/SARIMAX experimentation.
+- FastAPI & Uvicorn: Backend/API-serving stack for exposing model outputs.
+- Lovable (`lovable-tagger`): UI scaffolding workflow used to quickly generate and iterate demo interfaces.
+- React + TypeScript + Vite: Runtime frontend stack used across dashboard/UI modules.
+- Tailwind CSS + Radix UI (shadcn/ui): Component system and styling foundation used by the generated frontend code.
+- Recharts & Leaflet: Runtime visualization libraries for charts and park map rendering.
 
 ## Repository Structure
 
@@ -50,18 +61,7 @@ The repository includes:
 - Node.js `20+`
 - npm
 
-## Python Setup
-
-Run from repo root:
-
-```powershell
-python -m venv .venv
-.\.venv\Scripts\activate
-python -m pip install --upgrade pip
-python -m pip install numpy pandas joblib scikit-learn xgboost statsmodels lightgbm pyarrow pmdarima tqdm fastapi uvicorn jupyterlab ipykernel ipywidgets
-```
-
-## Forecasting Workflow
+# Forecasting Workflow
 
 ### 1) Generate weather forecast input
 
@@ -105,7 +105,7 @@ This produces:
 python -m modeling.wait_time_forecasting.waiting_time_cli --mode train_forecast --attractions "Bumper Cars,Dizzy Dropper,Free Fall" --horizon-days 7
 ```
 
-## Frontend Apps
+# Frontend Apps
 
 Install and run each UI separately.
 
